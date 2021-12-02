@@ -1,8 +1,5 @@
 from utils import read_lines
 
-data = read_lines('inputs/day01-test01.txt', cast_as=int)
-
-
 def run1(data):
     last = None
     increasesCounter = 0
@@ -33,5 +30,6 @@ def run2(data):
 
 
 if __name__ == '__main__':
+    data = read_lines('inputs/day01-test01.txt', cast_as=int)
     print('[Part1]:', run1(data))
     print('[Part2]:', run2(data))

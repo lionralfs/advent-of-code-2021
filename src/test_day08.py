@@ -30,7 +30,7 @@ def test_part2_example1():
     assert result == 5353
 
 
-def test_part2_example1():
+def test_part2_example2():
     data = read_lines('inputs/day08-test02.txt', cast_as=str)
     result = run2(data)
     assert result == 61229

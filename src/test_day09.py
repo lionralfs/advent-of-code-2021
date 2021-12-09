@@ -11,7 +11,20 @@ def test_part1_example():
     result = run1(data)
     assert result == 15
 
+
 def test_part1_full():
     data = read_lines('inputs/day09.txt', cast_as=str)
     result = run1(data)
     assert result == 548
+
+
+def test_part2_example():
+    data = read_lines('inputs/day09-test01.txt', cast_as=str)
+    result = run2(data)
+    assert result == 1134
+
+
+def test_part2_full():
+    data = read_lines('inputs/day09.txt', cast_as=str)
+    result = run2(data)
+    assert result == 786048

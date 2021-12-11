@@ -1,5 +1,5 @@
 from utils import read_lines
-from day10 import first_illegal_character, run1, run2, stack_remainder, stack_score
+from day10 import run1, run2, stack_remainder, stack_score
 import pytest
 
 if __name__ == '__main__':

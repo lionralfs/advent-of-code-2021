@@ -10,7 +10,8 @@ def all_local_minima(arr):
         x = iterator.multi_index[0]
         y = iterator.multi_index[1]
 
-        if all(value < arr[otherpoint[0]][otherpoint[1]] for otherpoint in neighbors_points(arr, (x, y))):
+        if all(value < arr[otherpoint[0]][otherpoint[1]]
+               for otherpoint in neighbors_points(arr, (x, y))):
             result.append((x, y))
 
     return result
@@ -47,7 +48,8 @@ def basin_from_point(arr, point):
     while len(todo) > 0:
         point_to_scan = todo.pop()
         new_points = [point for point in neighbors_points(
-            arr, point_to_scan, compare_values=lambda a, b: a < b and b != 9) if point not in scanned]
+            arr, point_to_scan, compare_values=lambda a, b: a < b and b != 9)
+            if point not in scanned]
 
         scanned.add(point_to_scan)
 

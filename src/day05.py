@@ -3,7 +3,8 @@ import numpy as np
 
 
 def to_line(fn_string):
-    return [tuple([int(n) for n in x.split(',')]) for x in fn_string.split(' -> ')]
+    return [tuple([int(n) for n in x.split(',')])
+            for x in fn_string.split(' -> ')]
 
 
 def is_straight(line):

@@ -57,7 +57,7 @@ def get_numbers(data):
         entries)
     entries.remove(five)
 
-    # the 0 is the last number that's left with 6 segments 
+    # the 0 is the last number that's left with 6 segments
     zero = find(lambda entry: len(entry) == 6, entries)
     entries.remove(zero)
 

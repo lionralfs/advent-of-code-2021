@@ -5,6 +5,7 @@ import pytest
 if __name__ == '__main__':
     pytest.main(args=['-s'])
 
+
 def test_part1_example():
     data = read_lines('inputs/day07-test01.txt', cast_as=str)
     result = run1(data)
@@ -27,4 +28,3 @@ def test_part2_full():
     data = read_lines('inputs/day07.txt', cast_as=str)
     result = run2(data)
     assert result == 94017638
-

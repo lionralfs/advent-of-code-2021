@@ -22,3 +22,6 @@ jobs:
           pip install -r requirements.txt
       - name: Test
         run: pytest -vv
+      - name: Lint with pycodestyle
+        run: |
+          pycodestyle src

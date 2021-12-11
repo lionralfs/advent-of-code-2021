@@ -29,7 +29,8 @@ def run1(data):
         last_drawn_number = ns[i]
         for field in data:
             if is_winner(field, numbers_drawn):
-                return last_drawn_number * sum([x for x in field.flatten() if x not in numbers_drawn])
+                return last_drawn_number * sum([x for x in field.flatten()
+                                                if x not in numbers_drawn])
 
 
 def run2(data):
@@ -43,10 +44,12 @@ def run2(data):
         last_drawn_number = ns[i]
 
         if len(data) == 1 and is_winner(data[0], numbers_drawn):
-            return last_drawn_number * sum([x for x in data[0].flatten() if x not in numbers_drawn])
+            return last_drawn_number * sum([x for x in data[0].flatten()
+                                            if x not in numbers_drawn])
 
         data = np.array(
-            [field for field in data if is_winner(field, numbers_drawn) is False])
+            [field for field in data
+             if is_winner(field, numbers_drawn) is False])
 
 
 if __name__ == '__main__':

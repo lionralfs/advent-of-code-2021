@@ -1,5 +1,6 @@
 from utils import read_lines
 
+
 def run1(data):
     last = None
     increasesCounter = 0

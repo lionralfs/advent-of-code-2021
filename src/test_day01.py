@@ -29,19 +29,22 @@ def test_part2_full():
     assert result == 1127
 
 
-@given(st.lists(st.integers(min_value=0), min_size=1, unique=True).map(lambda list: sorted(list, reverse=False)))
+@given(st.lists(st.integers(min_value=0), min_size=1, unique=True).map(
+    lambda list: sorted(list, reverse=False)))
 def test_part1_sorted_asc(a_list):
     result = run1(a_list)
     assert result == len(a_list) - 1
 
 
-@given(st.lists(st.integers(min_value=0), min_size=1, unique=True).map(lambda list: sorted(list, reverse=True)))
+@given(st.lists(st.integers(min_value=0), min_size=1, unique=True).map(
+    lambda list: sorted(list, reverse=True)))
 def test_part1_sorted_desc(a_list):
     result = run1(a_list)
     assert result == 0
 
 
-@given(st.lists(st.integers(min_value=0), min_size=1, unique=True).map(lambda list: sorted(list, reverse=True)))
+@given(st.lists(st.integers(min_value=0), min_size=1, unique=True).map(
+    lambda list: sorted(list, reverse=True)))
 def test_part2_sorted_desc(a_list):
     result = run2(a_list)
     assert result == 0

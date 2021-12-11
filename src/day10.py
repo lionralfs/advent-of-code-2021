@@ -62,14 +62,16 @@ def first_illegal_character_rec(line, stack):
 def run1(data):
     lines = [list(line) for line in data]
     illegal_characters = [first_illegal_character(line) for line in lines]
-    return sum([points_part1[char] for char in illegal_characters if char != None])
+    return sum([points_part1[char] for char in illegal_characters
+                if char is not None])
 
 
 def run2(data):
     lines = [list(line) for line in data]
 
     scores = list(filter(lambda x: x != 0,
-                         [stack_score(reversed(stack_remainder(line))) for line in lines]))
+                         [stack_score(reversed(stack_remainder(line)))
+                          for line in lines]))
 
     return int(np.median(scores))
 

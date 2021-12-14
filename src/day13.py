@@ -1,5 +1,4 @@
 from utils import read_lines
-import numpy as np
 
 
 def run1(data):

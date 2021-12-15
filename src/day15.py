@@ -37,26 +37,26 @@ def manhattan_distance(a, b):
 
 def AStar(field, start, goal):
     frontier = PriorityQueue()
-    frontier.put((0, [start]))
+    frontier.put((0, start))
 
-    scanned = set(start)
+    # a dict of point -> best possible cost to this point
+    point_costs = {
+        start: 0
+    }
 
     while not frontier.empty():
-        value, path = frontier.get()
-        last = path[-1]
+        _, point = frontier.get()
 
-        if last == goal:
-            return path
+        if point == goal:
+            return point_costs[point]
 
-        for neighbor in neighbors(field, last):
-            if neighbor not in scanned:
-                scanned.add(neighbor)
-                newpath = path.copy()
-                newpath.append(neighbor)
-                pathweight = sum([field[point.y][point.x]
-                                  for point in newpath[1:]])
+        for neighbor in neighbors(field, point):
+            cost = point_costs[point] + field[neighbor.y][neighbor.x]
+
+            if neighbor not in point_costs:
+                point_costs[neighbor] = cost
                 d = manhattan_distance(neighbor, goal)
-                frontier.put((d+pathweight, newpath))
+                frontier.put((d+cost, neighbor))
 
 
 def run1(data):
@@ -65,8 +65,8 @@ def run1(data):
     start = Point(0, 0)
     end = Point(field.shape[1] - 1, field.shape[0] - 1)
 
-    path = AStar(field, start, end)
-    return sum([field[point.y][point.x] for point in path[1:]])
+    result = AStar(field, start, end)
+    return result
 
 
 def run2(data):
@@ -92,8 +92,8 @@ def run2(data):
 
     start = Point(0, 0)
     end = Point(biggerfield.shape[1] - 1, biggerfield.shape[0] - 1)
-    path = AStar(biggerfield, start, end)
-    return sum([biggerfield[point.y][point.x] for point in path[1:]])
+    result = AStar(biggerfield, start, end)
+    return result
 
 
 if __name__ == '__main__':

@@ -1,4 +1,3 @@
-import math
 from utils import read_lines
 from queue import PriorityQueue
 from collections import namedtuple

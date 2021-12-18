@@ -114,12 +114,10 @@ def test_part2_example():
     assert result == 3993
 
 
-# takes too long
-
-# def test_part2_full():
-#     input = read_lines('inputs/day18.txt')
-#     result = run2(input)
-#     assert result == 4712
+def test_part2_full():
+    input = read_lines('inputs/day18.txt')
+    result = run2(input)
+    assert result == 4712
 
 
 if __name__ == '__main__':

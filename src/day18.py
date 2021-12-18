@@ -232,11 +232,9 @@ def run2(lines):
     results = []
     for i in range(len(lines)):
         for j in range(len(lines)):
-            # super inefficient, parsing all lines again
-            lines_parsed = [parse(line) for line in lines]
             if i == j:
                 continue
-            res = magnitude(reduce(add(lines_parsed[i], lines_parsed[j])))
+            res = magnitude(reduce(add(parse(lines[i]), parse(lines[j]))))
             results.append(res)
 
     return max(results)

@@ -1,5 +1,4 @@
-from utils import read_segments, read_lines
-import numpy as np
+from utils import read_lines
 from itertools import product
 from collections import Counter, defaultdict
 
